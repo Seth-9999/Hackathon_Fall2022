@@ -4,4 +4,16 @@
 # Description:
 
 
-choices = input("Enter ingredient")
+def add_recipe():
+    pass
+
+def add_ingrediant():
+    pass
+
+def main():
+    print("Success")
+    pass
+
+if __name__ == "__main__":
+    main()
+
