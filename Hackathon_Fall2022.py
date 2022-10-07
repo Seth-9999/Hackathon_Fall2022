@@ -12,6 +12,7 @@ def add_ingrediant():
 
 def main():
     print("Success")
+    choices = input("Enter ingredient")
     pass
 
 if __name__ == "__main__":
