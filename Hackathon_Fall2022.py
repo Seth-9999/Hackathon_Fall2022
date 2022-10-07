@@ -4,4 +4,4 @@
 # Description:
 
 
-option = input("enter the options")
+choices = input("Enter ingredient")
