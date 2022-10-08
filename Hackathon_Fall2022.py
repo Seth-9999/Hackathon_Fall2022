@@ -48,11 +48,28 @@ def add_recipe(container: list) -> None:
     container.append(item)
     filename = "recipes.txt"
     try:
+        file_already_exists =  True if os.path.exists(filename) else False
         with open(filename, "a") as document:
             #Note: append mode will create file if not exists
-            document.write(str(recipe_id) + "," + str(name) + "\n")
+            if file_already_exists:
+                document.write("\n")
+            document.write(str(recipe_id) + "," + str(name) + "," + str(cooking_time_minutes))
     except Exception:
         print("Unable to update recipes file. Please contact IT so data can be retained after session ends")
+
+
+def load_recipes(some_list):
+    # check for file?
+    filename = "recipes.txt"
+    with open(filename, "r") as filein:
+        for line in filein:
+            line = line.strip()
+            temp = line.split(",")
+            some_id = temp[0]
+            some_name = temp[1]
+            item = Ingredient.Ingredient(some_id, some_name)
+            some_list.append(item)
+    print(some_list[3])
 
 
 def load_ingredients(some_list):
@@ -70,7 +87,7 @@ def load_ingredients(some_list):
 
 def startup_procedures(ingredients_list, recipes_list, dict_recipies_by_ingredients):
     load_ingredients(ingredients_list)
-    #load_recipes(recipes_list)
+    load_recipes(recipes_list)
     #populate_recipies_by_ingred(dict_recipies_by_ingredients)
 
 def main():
