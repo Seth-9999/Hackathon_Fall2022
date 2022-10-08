@@ -14,6 +14,7 @@ def main():
         count = check_ingredients(ingredients)
         match += count
     print(match)
+    print("hi")
 
 
 def show_the_ingredients():
