@@ -108,7 +108,6 @@ def startup_procedures(ingredients_list, recipes_list, dict_recipies_by_ingredie
     load_ingredients(ingredients_list)
     load_recipes(recipes_list)
     populate_recipies_by_ingred(dict_recipies_by_ingredients, ingredients_list, recipes_list)
-    temp = 5
 
 def main():
     ingredients = []

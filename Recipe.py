@@ -7,6 +7,7 @@ class Recipe:
         self._id = str(id)
         self._name = name
         self._cooking_time = int(cooking_time_in_minutes)
+        self._components = None
 
     def set_name(self, name: str) -> None:
         """
@@ -29,6 +30,22 @@ class Recipe:
         :return: number of minutes that will be spent cooking when preparing this recipe
         """
         return self._cooking_time
+
+    def get_components(self):
+        # do I need to worry about returning same instance vs duplicate
+        return self._components
+
+    def set_one_component(self, ingredient_id):
+        if self._components is None:
+            self._components = []
+        self._components.append(ingredient_id)
+
+    def set_multiple_component(self, some_list):
+        # some_list has to be an iterable like list, set, tuple
+        if self._components is None:
+            self._components = some_list
+        else:
+            self._components.extend(some_list)
 
 
 
