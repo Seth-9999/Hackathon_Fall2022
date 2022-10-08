@@ -42,7 +42,7 @@ def add_recipe(container: list) -> None:
         except Exception:
             print("\nPlease enter a valid number. Unable to convert to positive integer >= 0.\n")
 
-    item = Recipe.Recipe(recipe_id, name)
+    item = Recipe.Recipe(recipe_id, name, cooking_time_minutes)
     # need to add recipe to recipes
     # check if name already used
     container.append(item)
@@ -83,12 +83,32 @@ def load_ingredients(some_list):
             some_name = temp[1]
             item = Ingredient.Ingredient(some_id, some_name)
             some_list.append(item)
-    print(some_list[3])
+
+
+def populate_recipies_by_ingred(hashmap, ingredients, recipies):
+    # check for file?
+    filename = "junctiontable.txt"
+    with open(filename, "r") as filein:
+        for line in filein:
+
+            line = line.strip()
+            temp = line.split(",")
+            recipe_id = temp[0]
+            ingredient_id = temp[1]
+
+            if ingredient_id in hashmap:
+                a_list = hashmap[ingredient_id]
+                a_list.append(recipe_id)
+            else:
+                temp = [recipe_id]
+                hashmap[ingredient_id] = temp
+
 
 def startup_procedures(ingredients_list, recipes_list, dict_recipies_by_ingredients):
     load_ingredients(ingredients_list)
     load_recipes(recipes_list)
-    #populate_recipies_by_ingred(dict_recipies_by_ingredients)
+    populate_recipies_by_ingred(dict_recipies_by_ingredients, ingredients_list, recipes_list)
+    temp = 5
 
 def main():
     ingredients = []
