@@ -1,8 +1,8 @@
-Onion
-Potatoes
-Salt and Pepper
-Garlic
-Olive oil
-Eggs
-Cheese
-Tortillas
+13, Onion
+14, Potatoes
+18, Salt and Pepper
+09, Garlic
+12, Olive oil
+07, Eggs
+06, Cheese
+19, Tortillas
