@@ -21,9 +21,9 @@ class Ingredient:
         """
         return self._name
 
-    def __get_id(self) -> str:
+    def get_id(self) -> str:
         """
-        (Private) helper method for testing purposes,etc
+        Return id# for ingredient
         :param self: NA
         :return: String. id# of the ingredient
         """
