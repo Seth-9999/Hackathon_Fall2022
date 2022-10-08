@@ -11,6 +11,7 @@ import menu
 
 
 def closing_procedures():
+
     pass
 
 
@@ -110,14 +111,15 @@ def startup_procedures(ingredients_list, recipes_list, dict_recipies_by_ingredie
     populate_recipies_by_ingred(dict_recipies_by_ingredients, ingredients_list, recipes_list)
 
 def main():
-    ingredients = []
-    recipes = []
-    recipes_by_ingredients = {}
+    # variable setup
+    QUIT_OPTION_VALUE = -1
+    INGREDIENT_OPTION, RECIPE_OPTION = 6, 5
+    ingredients, recipes, recipes_by_ingredients = [], [], {}
+
     startup_procedures(ingredients, recipes,recipes_by_ingredients)
     menu.show_main_menu("RecipeFinder")
     selection = menu.get_option_number(1, 6)
-    QUIT_OPTION_VALUE = -1
-    INGREDIENT_OPTION, RECIPE_OPTION = 6, 5
+
     while selection != QUIT_OPTION_VALUE:
         if selection == 1:
             pass
