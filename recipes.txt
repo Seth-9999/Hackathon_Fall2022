@@ -1,0 +1,9 @@
+R01,Mashed Parsnips
+R02,Roasted Potato and Chorizo Hash
+R03,Sausage and Egg Sandwiches
+R04,French Toast
+R05,Bacon, and Spinach Scrambled Eggs
+R06,Fruit Smoothie
+R07,Scrambled Eggs
+R08,Smashed Avocado Toast With Egg
+R09,Classic Omelet and Greens

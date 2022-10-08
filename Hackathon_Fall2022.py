@@ -30,13 +30,38 @@ def add_ingrediant(container: list) -> None:
         print("Unable to update ingredients file. Please contact IT so data can be retained after session ends")
 
 
+def add_recipe(container: list) -> None:
+    name = input("Enter recipe name: ")
+    recipe_id = input("Enter recipe id#: ")
+
+    # allow 0 cooking time b/c non-cooking stuff
+    cooking_time_minutes = -1
+    while cooking_time_minutes < 0:
+        try:
+            cooking_time_minutes = int(input("Enter cooking time (in minutes, positive integers only): "))
+        except Exception:
+            print("\nPlease enter a valid number. Unable to convert to positive integer >= 0.\n")
+
+    item = Recipe.Recipe(recipe_id, name)
+    # need to add recipe to recipes
+    # check if name already used
+    container.append(item)
+    filename = "recipes.txt"
+    try:
+        with open(filename, "a") as document:
+            #Note: append mode will create file if not exists
+            document.write(str(recipe_id) + "," + str(name) + "\n")
+    except Exception:
+        print("Unable to update recipes file. Please contact IT so data can be retained after session ends")
+
 def main():
 
     ingredients = []
+    recipes = []
     menu.show_main_menu("RecipeFinder")
     selection = menu.get_option_number(1, 6)
     QUIT_OPTION_VALUE = -1
-
+    INGREDIENT_OPTION, RECIPE_OPTION = 6, 5
     while selection != QUIT_OPTION_VALUE:
         if selection == 1:
             pass
@@ -46,17 +71,26 @@ def main():
             pass
         elif selection == 4:
             pass
-        elif selection == 5:
-            pass
-        elif selection == 6:
+        elif selection == RECIPE_OPTION:
+            menu.show_recipe_change_menu()
+            recipe_option = menu.get_option_number(1, 3)
+            ADD_RECIPE_OPTION_VALUE, RECIPE_EDIT_MODE = 1, 2
+            if recipe_option == ADD_RECIPE_OPTION_VALUE:
+                add_recipe(recipes)
+            elif recipe_option == RECIPE_EDIT_MODE:
+                pass
+            else:
+                # DELETE INGREDIENT
+                pass
+        elif selection == INGREDIENT_OPTION:
             # theoretically show all ingredients then menu
             menu.show_ingredient_change_menu()
             ingredient_option = menu.get_option_number(1, 3)
-            ADD_INGREDIENT_OPTION_VALUE, EDIT_MODE = 1, 2
+            ADD_INGREDIENT_OPTION_VALUE, INGREDIENT_EDIT_MODE = 1, 2
 
             if ingredient_option == ADD_INGREDIENT_OPTION_VALUE:
                 add_ingrediant(ingredients)
-            elif ingredient_option == EDIT_MODE:
+            elif ingredient_option == INGREDIENT_EDIT_MODE:
                 pass
             else:
                 # DELETE INGREDIENT

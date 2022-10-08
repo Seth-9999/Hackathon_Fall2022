@@ -40,6 +40,16 @@ def show_ingredient_change_menu() -> None:
     print("3 - Delete an ingredient")
     print("B - Return to previous screen. Any non-numeric key accepted\n")
 
+def show_recipe_change_menu() -> None:
+    """
+        Presents recipe change menu to user.
+        :return: prints to console several menu choices
+        """
+    print()
+    print("1 - Add a recipe")
+    print("2 - Edit/Change a recipe")
+    print("3 - Delete an recipe")
+    print("B - Return to previous screen. Any non-numeric key accepted\n")
 
 def show_main_menu(product_name: str) -> None:
     """
