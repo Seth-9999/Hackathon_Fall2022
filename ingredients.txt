@@ -22,4 +22,3 @@ I21,Yogurt
 I22,Fruit (banana, blueberries)
 I23,Avocado
 I24,Radishes
-
