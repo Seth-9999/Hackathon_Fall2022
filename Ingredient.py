@@ -2,8 +2,8 @@
 class Ingredient:
     """Components used to make food recipes like olive oil, chicken, oregeno, etc"""
 
-    def __init__(self, id: str , name: str) -> None:
-        self._id = str(id)
+    def __init__(self, ingredient_id: str, name: str) -> None:
+        self._id = str(ingredient_id)
         self._name = name
 
     def set_name(self, name: str) -> None:
