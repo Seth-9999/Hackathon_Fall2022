@@ -28,3 +28,10 @@ if __name__ == "__main__":
 
 def add_ingrediant():
     pass
+
+
+def add_recipe():
+    pass
+
+def get_best_match():
+    pass

@@ -1,6 +1,6 @@
 
 class Ingredient:
-    """Components used to make food like olive oil, chicken, oregeno, etc"""
+    """Components used to make food recipes like olive oil, chicken, oregeno, etc"""
 
     def __init__(self, id: str , name: str) -> None:
         self._id = str(id)
@@ -8,7 +8,7 @@ class Ingredient:
 
     def set_name(self, name: str) -> None:
         """
-        Change name of the ingredient
+        Re-naming an ingredient
         :param name - Set/change the name of an ingredient.
         :return None
         """
