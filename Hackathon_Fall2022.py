@@ -2,6 +2,7 @@
 # GitHub username:
 # Date:
 # Description:
+import os.path
 import typing
 
 import Recipe
@@ -11,6 +12,23 @@ import menu
 
 def closing_procedures():
     pass
+
+
+def add_ingrediant(container: list) -> None:
+    name = input("Enter ingredient name: ")
+    ingredient_id = input("Enter ingredient id#: ")
+    item = Ingredient.Ingredient(ingredient_id, name)
+    # need to add ingredient to ingredients
+    # check if name already used
+    container.append(item)
+    filename = "ingredients.txt"
+    try:
+        with open(filename, "a") as document:
+            #Note: append mode will create file if not exists
+            document.write(str(ingredient_id) + "," + str(name) + "\n")
+    except Exception:
+        print("Unable to update ingredients file. Please contact IT so data can be retained after session ends")
+
 
 def main():
 
@@ -50,7 +68,6 @@ def main():
         selection = menu.get_option_number(1, 6)
 
 
-
 if __name__ == "__main__":
 
     main()
@@ -58,14 +75,6 @@ if __name__ == "__main__":
 
 
 
-
-
-def add_ingrediant(container: list) -> None:
-    name = input("Enter ingredient name: ")
-    ingredient_id = input("Enter ingredient id#")
-    Ingredient.Ingredient(ingredient_id, name)
-    # check if name already used
-    container.add(ingredient_id, name)
 
 
 
