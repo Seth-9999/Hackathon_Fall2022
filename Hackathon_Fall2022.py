@@ -1,5 +1,5 @@
 """
-Name:「BEST FIT RECIPE」
+Name:「 RECIPE FINDER」
 Description: Ask the user to enter the ingredients they have and give them the best fit of the recipe.
 """
 

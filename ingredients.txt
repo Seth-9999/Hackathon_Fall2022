@@ -1,0 +1,24 @@
+I01,Milk
+I02,Potatoes
+I03,Parsnips
+I04,Salt and Pepper
+I05,Butter
+I06,Garlic
+I07,Chives
+I08,Onion
+I09,Olive Oil
+I10,Eggs
+I11,Cheese
+I12,Tortillas
+I13,Sausage
+I14,Muffins
+I15,Ground Cinnamon
+I16,Bread
+I17,Berries
+I18,Honey
+I19,Bacon
+I20,Spinach
+I21,Yogurt
+I22,Fruit (banana, blueberries)
+I23,Avocado
+I24,Radishes
