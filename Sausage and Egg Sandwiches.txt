@@ -1,0 +1,7 @@
+12, Olive oil
+13, Onion
+17, Sausage
+06, Cheese
+07, Eggs
+02, Bread
+18, Salt and Pepper
